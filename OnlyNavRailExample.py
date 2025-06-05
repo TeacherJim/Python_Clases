@@ -1,8 +1,8 @@
 import flet as ft
 
-from views.home_view import HomeView
-from views.cart_view import CartView
-from views.profile_view import ProfileView
+from views.home_view import home_view
+from views.cart_view import cart_view
+from views.profile_view import profile_view
 
 
 def main(page: ft.Page):
@@ -11,11 +11,11 @@ def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.LIGHT
 
     current_view = ft.Container(expand=True)
-    views = [HomeView(), CartView(), ProfileView()]
-    current_view.content = views[0]
+    views = [home_view, cart_view, profile_view]
+    current_view.content = views[0]()
 
     def on_change(e: ft.ControlEvent):
-        current_view.content = views[e.control.selected_index]
+        current_view.content = views[e.control.selected_index]()
         page.update()
 
     rail = ft.NavigationRail(
