@@ -1,12 +1,12 @@
 import flet as ft
 
-class ProfileView(ft.UserControl):
+
+def profile_view() -> ft.Column:
     """User profile screen."""
 
-    def build(self) -> ft.Control:
-        return ft.Column(
-            [
-                ft.Text("Perfil", size=24, weight=ft.FontWeight.BOLD),
-                ft.Text("Información del usuario"),
-            ]
-        )
+    return ft.Column(
+        [
+            ft.Text("Perfil", size=24, weight=ft.FontWeight.BOLD),
+            ft.Text("Información del usuario"),
+        ]
+    )
