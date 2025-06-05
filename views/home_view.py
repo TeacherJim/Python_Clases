@@ -10,3 +10,13 @@ class HomeView(ft.UserControl):
                 ft.Text("Bienvenido a la tienda de ejemplo"),
             ]
         )
+
+
+def home_view() -> ft.Control:
+    """Functional version of :class:`HomeView`."""
+    return ft.Column(
+        [
+            ft.Text("Home", size=24, weight=ft.FontWeight.BOLD),
+            ft.Text("Bienvenido a la tienda de ejemplo"),
+        ]
+    )

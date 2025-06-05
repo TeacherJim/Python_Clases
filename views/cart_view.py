@@ -10,3 +10,13 @@ class CartView(ft.UserControl):
                 ft.Text("Aquí van los productos agregados"),
             ]
         )
+
+
+def cart_view() -> ft.Control:
+    """Functional version of :class:`CartView`."""
+    return ft.Column(
+        [
+            ft.Text("Carrito", size=24, weight=ft.FontWeight.BOLD),
+            ft.Text("Aquí van los productos agregados"),
+        ]
+    )
