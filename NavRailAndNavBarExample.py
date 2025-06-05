@@ -1,8 +1,8 @@
 import flet as ft
 
-from views.home_view import home_view
-from views.cart_view import cart_view
-from views.profile_view import profile_view
+from views.home_view import build_home_view
+from views.cart_view import build_cart_view
+from views.profile_view import build_profile_view
 
 
 def main(page: ft.Page):
@@ -14,7 +14,7 @@ def main(page: ft.Page):
     current_view = ft.Container(expand=True)
 
     # Store view functions to create controls on demand
-    views = [home_view, cart_view, profile_view]
+    views = [build_home_view, build_cart_view, build_profile_view]
     current_view.content = views[0]()  # start on Home
 
     def on_navigation_change(e: ft.ControlEvent):
